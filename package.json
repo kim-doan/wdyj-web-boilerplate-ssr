@@ -6,19 +6,36 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "check-types": "tsc --pretty --noEmit",
+    "check-format": "prettier --check .",
+    "check-lint": "eslint . --ext ts --ext tsx --ext js",
+    "format": "prettier --write .",
+    "test-all": "npm run check-format && npm run check-lint && npm run check-types && npm run build",
+    "prepare": "husky install"
   },
   "dependencies": {
+    "@emotion/cache": "^11.10.3",
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4",
+    "husky-init": "^8.0.0",
     "next": "12.3.1",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "typescript": "^4.7.4"
   },
   "devDependencies": {
-    "@types/node": "18.11.0",
-    "@types/react": "18.0.21",
-    "@types/react-dom": "18.0.6",
+    "@types/node": "18.0.3",
+    "@types/react": "17.0.2",
+    "@types/react-dom": "17.0.2",
     "eslint": "8.25.0",
-    "eslint-config-next": "12.3.1",
-    "typescript": "4.8.4"
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-next": "^12.3.1",
+    "prettier": "^2.7.1"
+  },
+  "resolutions": {
+    "next": "^12.3.1",
+    "@types/react": "^17.0.2",
+    "@types/react-dom": "^17.0.2",
+    "@emotion/react": "^11.10.4"
   }
 }

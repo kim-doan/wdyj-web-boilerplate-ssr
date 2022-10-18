@@ -1,3 +1,16 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": ["next/core-web-vitals", "airbnb-base"],
+  "settings": {
+    "next": {
+      "rootDir": "src/**/*"
+    }
+  },
+  "rules": {
+    "no-unused-vars": "warn",
+    "eslint-disable-next-line": "off",
+    "import/prefer-default-export": "off",
+    "import/no-unresolved": "off",
+    "import/extensions": "off",
+    "comma-dangle": "off"
+  }
 }
