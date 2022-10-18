@@ -1,1 +1,1 @@
-export { default as Test } from './CharacterBody';
+export { default as Test } from './views/CharacterBody';

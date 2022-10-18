@@ -1,4 +1,4 @@
-import CharacterBody from 'modules/character/CharacterBody';
+import CharacterBody from 'modules/character/views/CharacterBody';
 import type { NextPage } from 'next';
 import React from 'react';
 

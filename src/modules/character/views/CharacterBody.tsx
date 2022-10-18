@@ -1,6 +1,6 @@
 import styeld from '@emotion/styled';
 import React from 'react';
-import useCharacterData from './queries/character/useCharacterData';
+import useCharacterData from '../queries/character/useCharacterData';
 
 const CharacterBody = () => {
   const { data, isLoading } = useCharacterData({
