@@ -21,16 +21,16 @@ const App = ({
   const [client] = useState(() => new QueryClient());
 
   return (
-    <CacheProvider value={cache}>
-      <ThemeProvider theme={theme}>
-        <QueryClientProvider client={client}>
-          <Hydrate state={pageProps.dehydratedState}>
+    <QueryClientProvider client={client}>
+      <Hydrate state={pageProps.dehydratedState}>
+        <CacheProvider value={cache}>
+          <ThemeProvider theme={theme}>
             {globalStyles}
             <Component {...pageProps} />
-          </Hydrate>
-        </QueryClientProvider>
-      </ThemeProvider>
-    </CacheProvider>
+          </ThemeProvider>
+        </CacheProvider>
+      </Hydrate>
+    </QueryClientProvider>
   );
 };
 

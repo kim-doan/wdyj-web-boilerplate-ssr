@@ -1,29 +1,24 @@
 import styeld from '@emotion/styled';
-import React from 'react';
-import useCharacterData from '../queries/useCharacterData';
+import { CharacterResult } from 'apiClients/characterSampleApi';
 
-const CharacterBody = () => {
-  const { data, isLoading } = useCharacterData({
-    page: 1,
-    options: {
-      keepPreviousData: true,
-    },
-  });
+interface CharacterBodyProps {
+  data: CharacterResult;
+}
 
-  return (
-    <Wrapper>
-      {isLoading ? (
-        <div>Loading...</div>
-      ) : (
-        <div>
-          {data?.results?.map((character) => (
-            <div key={character.id}>{character.name}</div>
-          ))}
+const CharacterBody = ({ data }: CharacterBodyProps) => (
+  <Wrapper>
+    <div>
+      {data?.results?.map((character: any) => (
+        <div key={character.id}>
+          <div>
+            <img src={character.image} alt="image" />
+          </div>
+          <div>{character.name}</div>
         </div>
-      )}
-    </Wrapper>
-  );
-};
+      ))}
+    </div>
+  </Wrapper>
+);
 
 export default CharacterBody;
 
